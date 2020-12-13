@@ -3347,7 +3347,8 @@ static void addrconf_dev_config(struct net_device *dev)
 	    (dev->type != ARPHRD_IP6GRE) &&
 	    (dev->type != ARPHRD_IPGRE) &&
 	    (dev->type != ARPHRD_TUNNEL) &&
-	    (dev->type != ARPHRD_NONE)) {
+	    (dev->type != ARPHRD_NONE) &&
+	    (dev->type != ARPHRD_PUREIP)) {
 		/* Alas, we support only Ethernet autoconfiguration. */
 		idev = __in6_dev_get(dev);
 		if (!IS_ERR_OR_NULL(idev) && dev->flags & IFF_UP &&
@@ -3890,7 +3891,8 @@ static void addrconf_rs_timer(unsigned long data)
 			goto put;
 
 		write_lock(&idev->lock);
-		if (ip6_operator_isop12())
+		if (ip6_operator_isop12() &&
+		    (strncmp(dev->name, "ccmni", 2) == 0))
 			idev->rs_interval = idev->cnf.rtr_solicit_interval;
 		else
 			idev->rs_interval = rfc3315_s14_backoff_update(
@@ -4212,12 +4214,14 @@ static void addrconf_dad_completed(struct inet6_ifaddr *ifp, bool bump_id,
 
 		write_lock_bh(&ifp->idev->lock);
 		spin_lock(&ifp->lock);
-		if (ip6_operator_isop12())
+		if (ip6_operator_isop12() &&
+		    (strncmp(dev->name, "ccmni", 2) == 0)) {
 			ifp->idev->rs_interval =
-			ifp->idev->cnf.rtr_solicit_interval;
-		else
+				ifp->idev->cnf.rtr_solicit_interval;
+		} else {
 			ifp->idev->rs_interval = rfc3315_s14_backoff_init(
 				ifp->idev->cnf.rtr_solicit_interval);
+		}
 		ifp->idev->rs_probes = 1;
 		ifp->idev->if_flags |= IF_RS_SENT;
 		addrconf_mod_rs_timer(ifp->idev, ifp->idev->rs_interval);
@@ -5513,7 +5517,8 @@ update_lft:
 
 	if (update_rs) {
 		idev->if_flags |= IF_RS_SENT;
-		if (ip6_operator_isop12())
+		if (ip6_operator_isop12() &&
+		    (strncmp(dev->name, "ccmni", 2) == 0))
 			idev->rs_interval = idev->cnf.rtr_solicit_interval;
 		else
 			idev->rs_interval = rfc3315_s14_backoff_init(
