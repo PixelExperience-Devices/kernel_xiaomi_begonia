@@ -642,7 +642,7 @@ EXPORT_SYMBOL(__bio_clone_fast);
  *	@gfp_mask: allocation priority
  *	@bs: bio_set to allocate from
  *
- * 	Like __bio_clone_fast, only also allocates the returned bio
+ *	Like __bio_clone_fast, only also allocates the returned bio
  */
 struct bio *bio_clone_fast(struct bio *bio, gfp_t gfp_mask, struct bio_set *bs)
 {
@@ -1061,6 +1061,7 @@ void bio_advance(struct bio *bio, unsigned bytes)
 		bio_integrity_advance(bio, bytes);
 
 	bio_advance_iter(bio, &bio->bi_iter, bytes);
+
 	/* also advance bc_iv for HIE */
 	bio->bi_crypt_ctx.bc_iv += (bytes >> PAGE_SHIFT);
 }
@@ -1486,7 +1487,7 @@ struct bio *bio_map_user_iov(struct request_queue *q,
 
 			if (len <= 0)
 				break;
-
+			
 			if (bytes > len)
 				bytes = len;
 
