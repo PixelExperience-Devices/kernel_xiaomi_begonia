@@ -50,8 +50,10 @@ Copyright 2020 The The LineageOS Project
 ```
 
 
--->
 
+
+
+<!---   # COMMENT #
 
 ## Linux kernel
 ```
@@ -74,4 +76,4 @@ the problems which may result by upgrading your kernel.
 ```
 
 
-
+-->
