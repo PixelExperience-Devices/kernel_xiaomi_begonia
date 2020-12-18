@@ -1,6 +1,6 @@
 # Redmi Note 8 Pro (begonia)
 
-The Redmi Note 8 Pro (codenamed _"begonia"_) are high-end mid-range smartphones from Xiaomi announced and released in August 2019.
+The Redmi Note 8 Pro (codenamed _"begonia"_) are high-end mid-range smartphones from Xiaomi announced and released in September 2019.
 
 ## Device specifications
 
@@ -14,7 +14,7 @@ The Redmi Note 8 Pro (codenamed _"begonia"_) are high-end mid-range smartphones 
 | Storage                 | 64GB / 128GB UFS2.1 flash storage                            |
 | Battery                 | Non-removable 4,500mAh (typ) Li Polymer                      |
 | Dimensions              | 161.7 x 76.4 x 8.81 mm                                       |
-| Display                 | 16.58cm (6.53) Dot Notch HDR Display                         |
+| Display                 | 1080 x 2340 pixels, 19.5:9 ratio (~395 ppi density)          |
 | Rear camera 1 (Main Camera)          | 64MP, 0.8μm，1/1.7 inch CMOS image sensor, 1.6μm 4-in-1 Super Pixel, f/1.89, Dual LED flash                          |
 | Rear camera 2 (Ultra-wide angle lens)| 8MP, 1.12μm，f/2.2，FOV 120°, Dual LED flash     |
 | Rear camera 3 (Macro lens)           | 2MP,1.75μm, 2cm focus, Dual LED flash           |
@@ -27,8 +27,7 @@ The Redmi Note 8 Pro (codenamed _"begonia"_) are high-end mid-range smartphones 
 
 
 
-
-## Copyright
+Copyright 2020 The The LineageOS Project
 
 <!---   # COMMENT #
 
