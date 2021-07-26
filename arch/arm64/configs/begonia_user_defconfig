@@ -582,7 +582,7 @@ CONFIG_RANDOMIZE_MODULE_REGION_FULL=y
 #
 # Boot options
 #
-CONFIG_CMDLINE="root=/dev/ram vmalloc=496M slub_max_order=0 slub_debug=O "
+CONFIG_CMDLINE="androidboot.super_partition=system root=/dev/ram vmalloc=496M slub_max_order=0 slub_debug=O "
 CONFIG_CMDLINE_FROM_BOOTLOADER=y
 # CONFIG_CMDLINE_EXTEND is not set
 # CONFIG_CMDLINE_FORCE is not set
