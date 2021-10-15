@@ -1,1 +1,4 @@
-/home/elias/github/mediatek/mt6785/xiaomi/begonia/lineage/android_kernel_xiaomi_mt6785/include/dum/ktrace.h
+#ifndef __KTRACE_H__
+#define __KTRACE_H__
+
+#endif
