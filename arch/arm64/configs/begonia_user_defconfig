@@ -47,7 +47,7 @@ CONFIG_PREEMPT=y
 # CONFIG_BOUNCE is not set
 CONFIG_ZSMALLOC=y
 CONFIG_RANDOMIZE_BASE=y
-CONFIG_CMDLINE="androidboot.super_partition=system root=/dev/ram vmalloc=496M slub_max_order=0 slub_debug=O "
+CONFIG_CMDLINE="root=/dev/ram vmalloc=496M slub_max_order=0 slub_debug=O "
 # CONFIG_EFI is not set
 CONFIG_BUILD_ARM64_APPENDED_DTB_IMAGE=y
 CONFIG_BUILD_ARM64_APPENDED_DTB_IMAGE_NAMES="mediatek/mt6785"
